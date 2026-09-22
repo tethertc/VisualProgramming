@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="kz.atu.lab04.LayoutController"
+            fx:id="rootPane"
+            stylesheets="@styles.css">
+
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="top-bar">
+            <padding><Insets top="10" right="15" bottom="10" left="15"/></padding>
+            <Label text="Панель управления студентами" styleClass="title-label"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Добавить" onAction="#onSaveClick"/>
+            <Button text="Очистить" onAction="#onClearClick"/>
+            <Button text="О программе" onAction="#onAboutClick"/>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox fx:id="navigationBox" spacing="8" prefWidth="170" styleClass="nav-box">
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+            <Label text="Навигация" styleClass="nav-title"/>
+            <Button text="Студенты" maxWidth="Infinity"/>
+            <Button text="Группы" maxWidth="Infinity"/>
+            <Button text="Настройки" maxWidth="Infinity"/>
+            <Region VBox.vgrow="ALWAYS"/>
+            <Button text="Скрыть навигацию" onAction="#onHideNavClick" maxWidth="Infinity"/>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox fx:id="contentBox" spacing="10">
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+
+            <GridPane fx:id="formGrid" hgap="10" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="80" prefWidth="120"/>
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="200"/>
+                </columnConstraints>
+
+                <Label text="ФИО:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtFullName" maxWidth="Infinity"
+                           GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Группа:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtGroup" maxWidth="Infinity"
+                           GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Курс:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="cmbCourse" maxWidth="Infinity"
+                          GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="Форма обучения:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="cmbStudyForm" maxWidth="Infinity"
+                          GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                <Button text="Сохранить" onAction="#onSaveClick" maxWidth="Infinity"
+                        GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <Label text="Примечание:"/>
+            <TextArea fx:id="txtNote" prefRowCount="3" wrapText="true"/>
+
+            <TableView fx:id="tblStudents" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colName" text="ФИО" prefWidth="250"/>
+                    <TableColumn fx:id="colGroup" text="Группа" prefWidth="150"/>
+                    <TableColumn fx:id="colCourse" text="Курс" prefWidth="120"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="status-bar">
+            <padding><Insets top="8" right="15" bottom="8" left="15"/></padding>
+            <Label fx:id="lblStatus" text="Статус: приложение готово"/>
+        </HBox>
+    </bottom>
+</BorderPane>
