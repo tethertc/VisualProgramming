@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.QuestionnaireController"
+      spacing="12" alignment="TOP_CENTER">
+
+    <padding><Insets top="16" right="20" bottom="16" left="20"/></padding>
+
+    <Label text="АНКЕТА СТУДЕНТА" style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="ФИО:"      GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="txtFullName" promptText="Иванов Иван Иванович"
+                   GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="280"/>
+
+        <Label text="Email:"    GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="txtEmail" promptText="ivanov@example.com"
+                   GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label text="Группа:"   GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="txtGroup" promptText="ИС-21"
+                   GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+        <Label text="Город:"    GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <ComboBox fx:id="cmbCity" promptText="Выберите город"
+                  GridPane.columnIndex="1" GridPane.rowIndex="3" prefWidth="280"/>
+
+        <Label text="Дата рождения:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        <DatePicker fx:id="dpBirthDate" GridPane.columnIndex="1" GridPane.rowIndex="4" prefWidth="280"/>
+    </GridPane>
+
+    <VBox spacing="4">
+        <Label text="Курс:" style="-fx-font-weight: bold;"/>
+        <HBox spacing="18">
+            <RadioButton fx:id="rbCourse1" text="1"/>
+            <RadioButton fx:id="rbCourse2" text="2"/>
+            <RadioButton fx:id="rbCourse3" text="3"/>
+            <RadioButton fx:id="rbCourse4" text="4"/>
+        </HBox>
+    </VBox>
+
+    <VBox spacing="4">
+        <Label text="Форма обучения:" style="-fx-font-weight: bold;"/>
+        <HBox spacing="18">
+            <RadioButton fx:id="rbFullTime" text="Очная"/>
+            <RadioButton fx:id="rbOnline"   text="Дистанционная"/>
+        </HBox>
+    </VBox>
+
+    <VBox spacing="4">
+        <Label text="Дополнительно:" style="-fx-font-weight: bold;"/>
+        <CheckBox fx:id="chkDormitory"   text="Общежитие"/>
+        <CheckBox fx:id="chkScholarship" text="Стипендия"/>
+        <CheckBox fx:id="chkActivist"    text="Активист"/>
+        <CheckBox fx:id="chkConsent"     text="Согласен на обработку данных"/>
+    </VBox>
+
+    <HBox spacing="12" alignment="CENTER">
+        <Button fx:id="btnCreate" text="Сформировать" onAction="#onCreateClick"/>
+        <Button fx:id="btnClear"  text="Очистить"     onAction="#onClearClick"/>
+        <Button fx:id="btnExit"   text="Выход"        onAction="#onExitClick"/>
+    </HBox>
+
+    <Label fx:id="lblResult" text="Результат:" wrapText="true"
+           style="-fx-border-color: #999; -fx-padding: 10; -fx-background-color: #f4f4f4;"
+           prefWidth="460" prefHeight="160"/>
+</VBox>
