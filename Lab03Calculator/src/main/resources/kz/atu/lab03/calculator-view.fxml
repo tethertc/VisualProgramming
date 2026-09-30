@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="kz.atu.lab03.CalculatorController"
+      spacing="15" alignment="CENTER">
+
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <Label text="ИНТЕРАКТИВНЫЙ КАЛЬКУЛЯТОР"
+           style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Первое число:"  GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="txtNumber1" promptText="Введите число"
+                   GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="200"/>
+
+        <Label text="Второе число:"  GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="txtNumber2" promptText="Введите число"
+                   GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="200"/>
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="+"  onAction="#onOperation"
+                onMouseEntered="#onMouseEntered" onMouseExited="#onMouseExited"
+                prefWidth="50"/>
+        <Button text="−"  onAction="#onOperation"
+                onMouseEntered="#onMouseEntered" onMouseExited="#onMouseExited"
+                prefWidth="50"/>
+        <Button text="×"  onAction="#onOperation"
+                onMouseEntered="#onMouseEntered" onMouseExited="#onMouseExited"
+                prefWidth="50"/>
+        <Button text="÷"  onAction="#onOperation"
+                onMouseEntered="#onMouseEntered" onMouseExited="#onMouseExited"
+                prefWidth="50"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="xʸ" onAction="#onOperation"
+                onMouseEntered="#onMouseEntered" onMouseExited="#onMouseExited"
+                prefWidth="50"/>
+        <Button text="Ост."  onAction="#onOperation"
+                onMouseEntered="#onMouseEntered" onMouseExited="#onMouseExited"
+                prefWidth="50"/>
+        <Button text="Блокировать"    onAction="#onLockClick"   prefWidth="130"/>
+        <Button text="Разблокировать" onAction="#onUnlockClick" prefWidth="130"/>
+    </HBox>
+
+    <Label fx:id="lblOperation" text="Операция: —"
+           style="-fx-font-size: 14;"/>
+
+    <Label fx:id="lblResult" text="Результат: 0"
+           style="-fx-font-size: 16; -fx-font-weight: bold; -fx-padding: 8;
+                  -fx-border-color: #999; -fx-background-color: #f4f4f4;"
+           prefWidth="380" alignment="CENTER"/>
+
+    <Label fx:id="lblCounter" text="Выполнено операций: 0"/>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Очистить" onAction="#onClearClick" prefWidth="120"/>
+        <Button text="Выход"    onAction="#onExitClick"  prefWidth="120"/>
+    </HBox>
+
+</VBox>
