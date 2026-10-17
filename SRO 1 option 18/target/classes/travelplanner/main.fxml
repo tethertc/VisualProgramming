@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="travelplanner.MainController">
+    <top>
+        <ToolBar>
+            <Button text="Добавить поездку" onAction="#onAddClick" />
+        </ToolBar>
+    </top>
+    <center>
+        <TableView fx:id="table">
+            <columns>
+                <TableColumn fx:id="colDest" text="Направление" prefWidth="300" />
+                <TableColumn fx:id="colBudget" text="Бюджет" prefWidth="200" />
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>

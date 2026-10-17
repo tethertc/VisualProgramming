@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="travelplanner.EditController" hgap="10" vgap="10" alignment="CENTER">
+    <Label text="Куда едем:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+    <TextField fx:id="txtDest" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+    <Label text="Бюджет:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+    <TextField fx:id="txtBudget" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+    <Button text="Сохранить" onAction="#onSave" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+</GridPane>
