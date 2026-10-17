@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab7.EditorController">
+    <top>
+        <VBox>
+            <children>
+                <MenuBar>
+                    <menus>
+                        <Menu text="Файл">
+                            <items>
+                                <MenuItem text="Новый" onAction="#onNew" accelerator="Shortcut+N" />
+                                <MenuItem text="Открыть" onAction="#onOpen" accelerator="Shortcut+O" />
+                                <MenuItem text="Сохранить" onAction="#onSave" accelerator="Shortcut+S" />
+                                <MenuItem text="Выход" onAction="#onExit" />
+                            </items>
+                        </Menu>
+                        <Menu text="Правка">
+                            <items>
+                                <MenuItem text="Вырезать" onAction="#onCut" accelerator="Shortcut+X" />
+                                <MenuItem text="Копировать" onAction="#onCopy" accelerator="Shortcut+C" />
+                                <MenuItem text="Вставить" onAction="#onPaste" accelerator="Shortcut+V" />
+                            </items>
+                        </Menu>
+                        <Menu text="Справка">
+                            <items>
+                                <MenuItem text="О программе" onAction="#onAbout" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <ToolBar>
+                    <items>
+                        <Button text="Новый" onAction="#onNew" />
+                        <Button text="Открыть" onAction="#onOpen" />
+                        <Button text="Сохранить" onAction="#onSave" />
+                        <Button text="Копировать" onAction="#onCopy" />
+                    </items>
+                </ToolBar>
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <TextArea fx:id="txtEditor" wrapText="true" />
+    </center>
+    <bottom>
+        <HBox alignment="CENTER_LEFT" prefHeight="30.0" spacing="10.0">
+            <children>
+                <Label fx:id="lblStatus" text="Символов: 0" />
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
