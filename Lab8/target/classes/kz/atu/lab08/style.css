@@ -1,0 +1,42 @@
+/* Общий тёмный фон и современный шрифт */
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #1e1e2e;
+}
+
+/* Меню-бар в тёмных тонах */
+.menu-bar {
+    -fx-background-color: #252538;
+    -fx-border-color: #31314a;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.menu-bar .label {
+    -fx-text-fill: #cdd6f4;
+}
+
+.menu:hover {
+    -fx-background-color: #31314a;
+}
+
+/* Текстовое поле */
+.text-area {
+    -fx-background-color: #181825;
+    -fx-text-fill: #cdd6f4;
+    -fx-padding: 10px;
+    -fx-border-color: #31314a;
+}
+
+.text-area .content {
+    -fx-background-color: #181825;
+}
+
+/* Строка состояния снизу */
+#lblStatus {
+    -fx-text-fill: #a6adc8;
+    -fx-background-color: #252538;
+    -fx-padding: 8px 15px;
+    -fx-border-color: #31314a;
+    -fx-border-width: 1px 0 0 0;
+}

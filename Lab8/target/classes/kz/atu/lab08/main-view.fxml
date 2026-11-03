@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="kz.atu.lab08.MainController"
+            stylesheets="@style.css">
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu text="Файл">
+                    <items>
+                        <MenuItem onAction="#onOpen" text="Открыть" />
+                        <MenuItem onAction="#onSaveAs" text="Сохранить как..." />
+                        <SeparatorMenuItem />
+                        <MenuItem onAction="#onExit" text="Выход" />
+                    </items>
+                </Menu>
+                <Menu text="Настройки">
+                    <items>
+                        <MenuItem onAction="#onChooseColor" text="Цвет текста" />
+                    </items>
+                </Menu>
+                <Menu text="Помощь">
+                    <items>
+                        <MenuItem onAction="#onAbout" text="О программе" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <TextArea fx:id="txtNotes" BorderPane.alignment="CENTER" />
+    </center>
+    <bottom>
+        <Label fx:id="lblStatus" text="Готово. Программа работает в штатном режиме." BorderPane.alignment="CENTER_LEFT" />
+    </bottom>
+</BorderPane>
