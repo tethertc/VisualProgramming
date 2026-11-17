@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kz.atu.lab12.controller.StudentController">
+    <top>
+        <VBox spacing="10">
+            <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+            <Label text="Каталог студентов" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+            <TextField fx:id="txtSearch" promptText="Поиск по ФИО..."/>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="tableStudents">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="colName" text="ФИО" prefWidth="300"/>
+                <TableColumn fx:id="colGroup" text="Группа" prefWidth="150"/>
+                <TableColumn fx:id="colGpa" text="GPA" prefWidth="100"/>
+            </columns>
+            <BorderPane.margin><Insets right="15" left="15"/></BorderPane.margin>
+        </TableView>
+    </center>
+    <bottom>
+        <VBox spacing="10">
+            <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+            <GridPane hgap="10" vgap="10">
+                <Label text="ФИО:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtName" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                <Label text="Группа:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtGroup" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                <Label text="GPA (0-4):" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtGpa" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            </GridPane>
+            <HBox spacing="10">
+                <Button text="Добавить" onAction="#onAdd"/>
+                <Button text="Изменить" onAction="#onUpdate"/>
+                <Button text="Удалить" onAction="#onDelete"/>
+                <Button text="Обновить" onAction="#onRefresh"/>
+            </HBox>
+            <Label fx:id="lblStatus" text="Записей: 0"/>
+        </VBox>
+    </bottom>
+</BorderPane>
